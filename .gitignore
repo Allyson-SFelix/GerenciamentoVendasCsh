@@ -1,2 +1,5 @@
 .db
 .sln
+/bin/
+/obj/
+/.vs/
