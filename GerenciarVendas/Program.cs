@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using GerenciarVendas.UI;
 
-namespace GerenciamentoVendas
+namespace GerenciarVendas
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {

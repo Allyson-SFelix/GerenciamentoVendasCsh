@@ -9,7 +9,7 @@ namespace GerenciarVendas.Data
 {
     public static class DataConnections
     {
-        private static readonly string _connectionString = "Data Source=\"C:\\\\Users\\\\allys\\\\OneDrive\\\\Área de Trabalho\\\\C_sharp_\\\\C--ESTUDOS\\\\projetos\\\\GerenciarVendas\\\\meuBanco.db\";Version=3";
+        private static readonly string _connectionString = "Data Source=C:\\Users\\allys\\OneDrive\\Área de Trabalho\\C_sharp_\\Projetos\\GerenciamentoVendasCsh\\GerenciarVendas\\meuBanco.db;Version=3;";
 
         /* Para conectar com o banco de dados
          *  coloco o caminho ou o metodo de conexão

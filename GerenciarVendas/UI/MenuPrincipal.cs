@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using GerenciarVendas.Models;
 using GerenciarVendas.Repository;
+using GerenciarVendas.Utils;
 
 namespace GerenciarVendas.UI
 {
@@ -35,6 +36,7 @@ namespace GerenciarVendas.UI
                         break;
                     case "3":
                         Console.Write("Atualizar Venda");
+                        AtualizarVenda();
                         break;
                     case "4":
                         Console.Write("Remover Venda");
@@ -49,24 +51,25 @@ namespace GerenciarVendas.UI
             }
         }
 
+
+        public static async void AtualizarVenda()
+        {
+            Console.WriteLine("- - MENU | Atualizar Vendas - -");
+            // perguntar se é via codigo ou por nome de produto  
+            Console.Write("1 - - Nome produto da venda\n2 - - Codigo da venda\n: ");
+            string tipoBusca = Console.ReadLine() ?? "1";
+
+            await RepositoryData.AtualizarVendaBD(tipoBusca);
+        }
+
+
         public static async void AdicionarVenda()
         {
-            Console.WriteLine("- - MENU | VENDAS - -");
-            Console.Write("Nome do produto: ");
-            string nome = Console.ReadLine() ?? "Default";
-            Console.Write("Quantidade: ");
-            int quantidadeVenda = int.Parse(Console.ReadLine() ?? "0", CultureInfo.InvariantCulture) ;
-            Console.Write("Preco unitario: ");
-            float precoUnit = float.Parse(Console.ReadLine() ?? "0", CultureInfo.InvariantCulture);
+            Console.WriteLine("- - MENU | Adicionar Vendas - -");
 
-            Vendas venda = new Vendas(nome, quantidadeVenda, precoUnit);
+            Vendas venda = Helpers.DadosVendas();
 
-            float valorTotal = (precoUnit * quantidadeVenda);
-            
-            Console.WriteLine("Valor total: "+valorTotal.ToString("F2", CultureInfo.InvariantCulture));
-
-            RepositoryData repository = new RepositoryData();
-            await repository.InserirVenda(venda);
+            await RepositoryData.InserirVendaBD(venda);
         }   
     }
 
