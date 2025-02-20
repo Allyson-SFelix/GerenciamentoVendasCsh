@@ -1,5 +1,5 @@
-.db
-.sln
-/bin/
-/obj/
-/.vs/
+GerenciarVendas/.vs/
+GerenciarVendas/GerenciarVendas.sln
+GerenciarVendas/bin/
+GerenciarVendas/meuBanco.db
+GerenciarVendas/obj/
